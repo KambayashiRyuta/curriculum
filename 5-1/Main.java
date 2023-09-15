@@ -25,7 +25,7 @@ public class Main {
             array.set(1, "bar");
 //      問③ fooが格納されているインデックスを出力してください。
 //  　<以下記述>
-            System.out.println(array.get(2));
+            System.out.println(array.indexOf("foo"));
 //      問④ キーがString型、バリューがObject型の要素を三つ格納しましょう。
         Map<String, Object> map = new HashMap<>();
 //  　<以下記述>

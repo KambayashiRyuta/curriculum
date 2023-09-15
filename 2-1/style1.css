@@ -68,11 +68,10 @@
         width: 150px;
     }
 
-    .main {
-        clear: both;/*要素の打ち消し */
-    }
+    
     .right {
         width: 150px;
+        clear: both;/*要素の打ち消し */
     }
 
     .footer {

@@ -21,7 +21,7 @@ public class EmployeeService {
  /** ドライバーのクラス名 */
  private static final String POSTGRES_DRIVER = "org.postgresql.Driver";
  /** ・JDBC接続先情報 */
- private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:8080/Employee";
+ private static final String JDBC_CONNECTION = "jdbc:postgresql://localhost:5432/Employee";
  /** ・ユーザー名 */
  private static final String USER = "postgres";
  /** ・パスワード */
@@ -80,7 +80,7 @@ public class EmployeeService {
  preparedStatement.setString(1, id);
  preparedStatement.setString(2, password);
   // SQLを実行。実行した結果をresultSetに格納。
- resultSet = preparedStatement.executeQuery();
+ resultSet = preparedStatement.executeQuery(SQL_SELECT);
  
  while (resultSet.next()) {
   // 問⑦ tmpName,tmpComment,tmpLoginTimeに適当な値を入れてください。

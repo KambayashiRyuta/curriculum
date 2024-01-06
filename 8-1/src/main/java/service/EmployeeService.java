@@ -80,12 +80,17 @@ public class EmployeeService {
             preparedStatement.setString(2, password);
             // SQLを実行。実行した結果をresultSetに格納。
             resultSet = preparedStatement.executeQuery();
+            System.out.println(password);
+            System.out.println(id);
+            System.out.println(resultSet);
+            System.out.println(login_time);
 
             while (resultSet.next()) {
                 // 問⑦ tmpName,tmpComment,tmpLoginTimeに適当な値を入れてください。
                 String tmpName = resultSet.getString("name");
                 String tmpComment = resultSet.getString("comment");
                 String tmpLoginTime = resultSet.getString("login_time");
+                System.out.println(tmpName);
 
                 // 問⑧ EmployeeBeanに取得したデータを入れてください。
                 employeeDate = new EmployeeBean();

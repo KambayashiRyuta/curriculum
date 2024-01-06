@@ -23,18 +23,17 @@ public class EmployeeController extends HttpServlet {
             // 問① index.htmlから送信されたIDとPassWordの値を取得できるように修正しましょう。
             String id = request.getParameter("id");
             String password = request.getParameter("password");
-
             /*
              * IDとPassWordと元に、社員情報を検索する関数の呼び出し、結果をJSPに渡す処理 ※
              * EmployeeBeanとEmployeeServiceをimportするのを忘れないでください。
              */
 
             // 問② EmployeeServiceクラスをインスタンス化する。
-            EmployeeService employeeService = new EmployeeService();
+            EmployeeService ES = new EmployeeService();
             // 問③ EmployeeBeanに、EmployeeServiceよりsearch関数を呼び出し、返り値を格納する。
-            EmployeeBean employeeBean = employeeService.search(id, password);
+            EmployeeBean returnDate = ES.search(id, password);
             // 問④ nullの部分に適切な引数をセットする。
-            request.setAttribute("EmployeeBean", employeeBean);
+            request.setAttribute("EmployeeBean", returnDate);
         
         } catch (Exception e) {
             e.printStackTrace();
